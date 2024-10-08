@@ -105,12 +105,6 @@ export function AuthPage() {
           type="primary"
           onClick={goChat}
         />
-        <IconButton
-          text={Locale.Auth.SaasTips}
-          onClick={() => {
-            goSaas();
-          }}
-        />
       </div>
     </div>
   );
@@ -122,7 +116,7 @@ function TopBanner() {
   const isMobile = useMobileScreen();
   useEffect(() => {
     // 检查 localStorage 中是否有标记
-    const bannerDismissed = storage.getItem("bannerDismissed");
+    const bannerDismissed = "true";
     // 如果标记不存在，存储默认值并显示横幅
     if (!bannerDismissed) {
       storage.setItem("bannerDismissed", "false");
@@ -158,17 +152,6 @@ function TopBanner() {
       <div className={`${styles["top-banner-inner"]} no-dark`}>
         <Logo className={styles["top-banner-logo"]}></Logo>
         <span>
-          {Locale.Auth.TopTips}
-          <a
-            href={SAAS_CHAT_URL}
-            rel="stylesheet"
-            onClick={() => {
-              trackSettingsPageGuideToCPaymentClick();
-            }}
-          >
-            {Locale.Settings.Access.SaasStart.ChatNow}
-            <Arrow style={{ marginLeft: "4px" }} />
-          </a>
         </span>
       </div>
       {(isHovered || isMobile) && (
