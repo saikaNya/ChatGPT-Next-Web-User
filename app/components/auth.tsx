@@ -126,7 +126,7 @@ function TopBanner() {
   const isMobile = useMobileScreen();
   useEffect(() => {
     // 检查 localStorage 中是否有标记
-    const bannerDismissed = "true";
+    const bannerDismissed = storage.getItem("bannerDismissed");
     // 如果标记不存在，存储默认值并显示横幅
     if (!bannerDismissed) {
       storage.setItem("bannerDismissed", "false");
