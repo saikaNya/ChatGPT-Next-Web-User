@@ -692,7 +692,7 @@ export function Settings() {
         </ListItem>
     );
 
-    const saasStartComponent = (
+    /*const saasStartComponent = (
         <ListItem
             className={styles["subtitle-button"]}
             title={
@@ -715,7 +715,7 @@ export function Settings() {
                 }}
             />
         </ListItem>
-    );
+    );*/
 
     const useCustomConfigComponent = // Conditionally render the following ListItem based on clientConfig.isApp
         !clientConfig?.isApp && ( // only show if isApp is false
@@ -1734,7 +1734,7 @@ export function Settings() {
                 </List>
 
                 <List id={SlotID.CustomModel}>
-                    {saasStartComponent}
+                    {{/*saasStartComponent*/}}
                     {accessCodeComponent}
 
                     {!accessStore.hideUserApiKey && (
